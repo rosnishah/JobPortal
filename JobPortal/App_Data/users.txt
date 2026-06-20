@@ -1,0 +1,7 @@
+﻿Shinchan|123|JobSeeker|shinchan@gmail.com|11/18/25 06:52:50
+Shah.rk|123|Employer|shahrosni07@gmail.com|11/18/25 07:00:38
+1,Shinchan,shinchan@gmail.com,a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3,JobSeeker,2025-11-25,True
+2,Shinosuke,shinosuke@gmail.com,pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=,JobSeeker,2025-11-25,True
+3,Shinosuke Nohara,shinosuke@gmail.com,pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=,Employer,2025-11-25,True
+4,Kazama,kazama@gmail.com,pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=,JobSeeker,2025-11-25,True
+5,Neni,Neni@gmail.com,pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=,JobSeeker,2025-11-25,True

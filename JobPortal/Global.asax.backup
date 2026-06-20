@@ -1,0 +1,152 @@
+﻿<%@ Application Language="C#" %>
+<%@ Import Namespace="System" %>
+<%@ Import Namespace="System.Web" %>
+<%@ Import Namespace="System.Web.Security" %>
+<%@ Import Namespace="System.Web.SessionState" %>
+
+<script runat="server">
+    void Application_Start(object sender, EventArgs e)
+    {
+        // Code that runs on application startup
+        try
+        {
+            // Initialize application variables
+            Application["AppStartTime"] = DateTime.Now;
+            Application["OnlineUsers"] = 0;
+            Application["TotalUsers"] = 0;
+            Application["TotalJobs"] = 0;
+            
+            // Ensure data directory exists
+            string dataPath = Server.MapPath("~/App_Data/");
+            if (!System.IO.Directory.Exists(dataPath))
+            {
+                System.IO.Directory.CreateDirectory(dataPath);
+            }
+            
+            // Log application start
+            LogActivity("APPLICATION_START", "Application started successfully");
+        }
+        catch (Exception ex)
+        {
+            LogActivity("APPLICATION_START_ERROR", ex.ToString());
+        }
+    }
+
+    void Application_End(object sender, EventArgs e)
+    {
+        // Code that runs on application shutdown
+        try
+        {
+            LogActivity("APPLICATION_END", "Application shutting down");
+        }
+        catch
+        {
+            // Ignore errors during shutdown
+        }
+    }
+
+    void Application_Error(object sender, EventArgs e)
+    {
+        // Code that runs when an unhandled error occurs
+        Exception ex = Server.GetLastError();
+        
+        // Log the exception with detailed context
+        LogActivity("APPLICATION_ERROR", 
+            string.Format("Message: {0}, StackTrace: {1}, InnerException: {2}, URL: {3}", 
+                ex.Message, 
+                ex.StackTrace, 
+                ex.InnerException != null ? ex.InnerException.Message : "null",
+                Request.Url.ToString()));
+        
+        // IMPORTANT: Clear the error to prevent infinite redirects
+        Server.ClearError();
+        
+        // REMOVED: Redirect to ErrorPage (since it doesn't exist)
+        // Instead, let ASP.NET handle the error normally
+        // Or redirect to a safe page like home page
+        Response.Redirect("~/Default.aspx?error=unexpected");
+    }
+
+    void Session_Start(object sender, EventArgs e)
+    {
+        // Code that runs when a new session is started
+        Application.Lock();
+        try
+        {
+            Application["OnlineUsers"] = Convert.ToInt32(Application["OnlineUsers"]) + 1;
+            Application["TotalUsers"] = Convert.ToInt32(Application["TotalUsers"]) + 1;
+        }
+        finally
+        {
+            Application.UnLock();
+        }
+        
+        // Initialize session variables
+        Session["SessionID"] = Guid.NewGuid().ToString();
+        Session["SessionStartTime"] = DateTime.Now;
+        Session["IsAuthenticated"] = false;
+        
+        LogActivity("SESSION_START", "Session " + Session.SessionID + " started");
+    }
+
+    void Session_End(object sender, EventArgs e)
+    {
+        // Code that runs when a session ends
+        Application.Lock();
+        try
+        {
+            int onlineUsers = Convert.ToInt32(Application["OnlineUsers"]);
+            if (onlineUsers > 0)
+            {
+                Application["OnlineUsers"] = onlineUsers - 1;
+            }
+        }
+        finally
+        {
+            Application.UnLock();
+        }
+        
+        LogActivity("SESSION_END", "Session " + Session.SessionID + " ended");
+    }
+
+    void Application_BeginRequest(object sender, EventArgs e)
+    {
+        // Code that runs at the beginning of each request
+        // Add security headers
+        Response.Headers.Remove("X-Powered-By");
+        Response.Headers.Remove("X-AspNet-Version");
+        Response.Headers.Remove("X-AspNetMvc-Version");
+        
+        Response.AddHeader("X-Frame-Options", "SAMEORIGIN");
+        Response.AddHeader("X-Content-Type-Options", "nosniff");
+        Response.AddHeader("X-XSS-Protection", "1; mode=block");
+    }
+
+    void Application_AuthenticateRequest(object sender, EventArgs e)
+    {
+        // Custom authentication logic if needed
+        if (Context.User != null && Context.User.Identity.IsAuthenticated)
+        {
+            // Add custom role management here if needed
+            // For example: Set roles based on user type
+            string username = Context.User.Identity.Name;
+            // Your custom role logic here
+        }
+    }
+
+    // Utility method for logging
+    private void LogActivity(string activityType, string message)
+    {
+        try
+        {
+            string logPath = Server.MapPath("~/App_Data/activity_log.txt");
+            string logEntry = string.Format("[{0}] {1}: {2}\n", 
+                DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), activityType, message);
+            System.IO.File.AppendAllText(logPath, logEntry);
+        }
+        catch
+        {
+            // Ignore logging errors
+        }
+    }
+</script>

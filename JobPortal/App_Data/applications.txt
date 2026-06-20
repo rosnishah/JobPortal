@@ -1,0 +1,10 @@
+﻿1|TechCorp|1|Senior Software Engineer|John Doe|john@example.com|1234567890|2025-11-26|I am very interested in this role|Resumes/john_doe.pdf|Pending
+2|TechCorp|1|Senior Software Engineer|Jane Smith|jane@example.com|9876543210|2025-11-25|Looking forward to contributing|Resumes/jane_smith.docx|Reviewed
+3|TechCorp|2|Marketing Intern|Alice Brown|alice@example.com|2345678901|2025-11-24|Excited to learn marketing skills|Resumes/alice_brown.pdf|Pending
+4|HealthPlus|3|Data Analyst|Bob Johnson|bob@example.com|3456789012|2025-11-26|Strong data analysis skills|Resumes/bob_johnson.docx|Shortlisted
+5|FinBank|4|Financial Advisor|Cathy Lee|cathy@example.com|4567890123|2025-11-25|Experienced in client finance|Resumes/cathy_lee.pdf|Pending
+6|EduWorld|5|English Teacher|David Kim|david@example.com|5678901234|2025-11-23|Passionate about teaching|Resumes/david_kim.docx|Reviewed
+7|DesignHub|6|UI/UX Designer|Emma Wilson|emma@example.com|6789012345|2025-11-22|Creative designer|Resumes/emma_wilson.pdf|Pending
+8|AutoMakers|7|Mechanical Engineer|Frank Green|frank@example.com|7890123456|2025-11-21|Experienced in AutoCAD|Resumes/frank_green.docx|Reviewed
+9|Foodies|8|Chef|Grace Hall|grace@example.com|8901234567|2025-11-20|Expert in gourmet dishes|Resumes/grace_hall.pdf|Pending
+10|GreenEnergy|9|Project Manager|Henry Young|henry@example.com|9012345678|2025-11-19|PMP certified project manager|Resumes/henry_young.pdf|Hired

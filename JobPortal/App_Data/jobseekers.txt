@@ -1,0 +1,3 @@
+﻿Doraemon|123|Doraemon|doraemon@gmail.com
+Shinosuke Nohara|123|Shinchan Nohara|shinosuke@gmail.com
+Nobita|123|Nobita|nobita@gmail.com

@@ -1,0 +1,27 @@
+﻿// Create categories file if it doesn't exist
+string categoriesFile = Path.Combine(dataPath, "categories.txt");
+if (!File.Exists(categoriesFile))
+{
+    string defaultCategories = @"category_id,name,description
+1,Information Technology,IT and software development jobs
+2,Healthcare,Medical and healthcare professions
+3,Finance,Banking, accounting and financial services
+4,Education,Teaching and educational roles
+5,Sales & Marketing,Sales, marketing and business development
+6,Engineering,Engineering and technical positions
+7,Hospitality,Hotel, restaurant and tourism jobs
+8,Retail,Retail and customer service positions
+9,Human Resources,HR, recruitment and talent management
+10,Administration,Office administration and clerical jobs
+11,Construction,Construction and trades positions
+12,Manufacturing,Manufacturing and production jobs
+13,Transportation,Logistics, delivery and transportation
+14,Real Estate,Real estate and property management
+15,Legal,Legal services and law professions
+16,Arts & Design,Creative arts and design jobs
+17,Media & Communications,Media, journalism and PR roles
+18,Science & Research,Scientific research and development
+19,Non-Profit,Non-profit and social services
+20,Government,Government and public sector jobs";
+    File.WriteAllText(categoriesFile, defaultCategories);
+}

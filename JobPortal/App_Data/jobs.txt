@@ -1,0 +1,10 @@
+JOB101|E101|Frontend Developer|React + UI work|IT|Bangalore|6 LPA|Full-Time|Active|2025-11-28
+JOB102|E101|Backend Developer|C# .NET APIs|IT|Hyderabad|10 LPA|Full-Time|Inactive|2025-11-27
+
+JOB201|E102|HR Executive|Recruitment + Payroll|HR|Mumbai|4 LPA|Full-Time|Active|2025-11-20
+
+JOB301|E103|Marketing Executive|Lead campaigns|Marketing|Delhi|5 LPA|Full-Time|Active|2025-11-18
+
+JOB401|E104|Ayurveda Consultant|Customer support|Wellness|Pune|3 LPA|Full-Time|Active|2025-11-22
+J638999242834783707|Nobita|Farmer|Organic|Agri|Japan|$45000|-|Inactive|2025-11-28
+J638999324743351995|Shinchan|Farmer|dsf|Agri|Japan|$45000|-|Inactive|2025-11-28

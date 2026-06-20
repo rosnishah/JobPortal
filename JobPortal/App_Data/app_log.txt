@@ -1,0 +1,20 @@
+[11/18/25 05:12:18] INFO: Application started successfully at 11/18/25 05:12:18
+[11/18/25 06:51:22] INFO: Application started successfully at 11/18/25 06:51:22
+[11/18/25 06:59:21] INFO: Application started successfully at 11/18/25 06:59:21
+2025-11-25 05:32:12 [SEARCH_ERROR] Error in search: Thread was being aborted.
+2025-11-25 05:32:21 [SEARCH_ERROR] Error in search: Thread was being aborted.
+2025-11-25 05:50:40 [SEARCH_ERROR] Error in search: Thread was being aborted.
+2025-11-25 05:55:51 [SEARCH_ERROR] Error in search: Thread was being aborted.
+2025-11-25 06:02:09 [LOGIN_FAILED] Failed login attempt for username: Shinchan
+2025-11-25 06:03:18 [JOBSEEKER_SAVED] Job seeker saved: Shinchan, Shinchan Nohara
+2025-11-25 06:03:18 [REGISTER_ERROR] Error: System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at JobPortal.Register.btnRegister_Click(Object sender, EventArgs e) in C:\Users\rosni\source\repos\JobPortal\JobPortal\Register.aspx.cs:line 118
+2025-11-25 06:03:27 [LOGIN_FAILED] Failed login attempt for username: Shinchan
+2025-11-25 06:03:40 [LOGIN_FAILED] Failed login attempt for username: Shinchan
+2025-11-25 06:26:46 [SEARCH_ERROR] Error in search: Thread was being aborted.
+2025-11-25 06:30:15 [SEARCH_ERROR] Error in search: Thread was being aborted.
+2025-11-25 06:32:26 [SEARCH_ERROR] Error in search: Thread was being aborted.
